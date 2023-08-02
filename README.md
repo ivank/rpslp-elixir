@@ -15,5 +15,5 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
-_[RPSLS]: Rock Paper Scissors Lizard Spock
-_[DMacks]: [DMacks](//commons.wikimedia.org/wiki/User:DMacks) - Edited (repositioned elements) version of [File:Pierre ciseaux feuille lézard spock.svg](//commons.wikimedia.org/wiki/File:Pierre_ciseaux_feuille_l%C3%A9zard_spock.svg), which is by [Nojhan](//commons.wikimedia.org/wiki/User:Nojhan) and licensed GFDL/cc-by-sa-3.0,2.5,2.0,1.0, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0), [Link](https://commons.wikimedia.org/w/index.php?curid=13241299)
+*[RPSLS]: Rock Paper Scissors Lizard Spock
+*[DMacks]: [DMacks](//commons.wikimedia.org/wiki/User:DMacks) - Edited (repositioned elements) version of [File:Pierre ciseaux feuille lézard spock.svg](//commons.wikimedia.org/wiki/File:Pierre_ciseaux_feuille_l%C3%A9zard_spock.svg), which is by [Nojhan](//commons.wikimedia.org/wiki/User:Nojhan) and licensed GFDL/cc-by-sa-3.0,2.5,2.0,1.0, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0), [Link](https://commons.wikimedia.org/w/index.php?curid=13241299)
