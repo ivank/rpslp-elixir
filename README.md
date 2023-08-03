@@ -7,20 +7,25 @@ RPSLS(Rock Paper Scissors Lizard Spock) is an extension to the original game of 
 # Database Tables diagram
 
 ```mermaid
-  erDiagram
+erDiagram
     USER {
+        integer id PK
         string name
         string email
-        enum[] scopes [admin]
+        enum[] scopes "admin"
     }
     MOVE {
-        integer user_id references(USER)
-        integer play_id references(PLAY)
+        integer id PK
+        integer user_id FK
+        integer play_id FK
+        enum[] feature "rock,paper,scissors,lizard,spock"
     }
     PLAY {
-        integer lobby_id references(LOBBY)
+        integer id PK
+        integer lobby_id FK
     }
     LOBBY {
+        integer id PK
         string slug
     }
     USER ||--o{ MOVE : places
