@@ -5,7 +5,7 @@ config :game, Game.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "game_dev",
+  database: "rpsls_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
