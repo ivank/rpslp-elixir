@@ -11,7 +11,9 @@ defmodule Game.ProfileFixtures do
     {:ok, user} =
       attrs
       |> Enum.into(%{
-        name: "some name"
+        email: "some email",
+        scopes: ["admin"],
+        username: "some username"
       })
       |> Game.Profile.create_user()
 

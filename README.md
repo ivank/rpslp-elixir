@@ -4,6 +4,30 @@
 
 RPSLS(Rock Paper Scissors Lizard Spock) is an extension to the original game of rock-paper-scissors. The additional characters were added by [Sam Kass and Karen Bryla](http://www.samkass.com/theories/RPSSL.html) before being adopted, reordered, and [overpopularised by The Big Bang Theory](http://bigbangtheory.wikia.com/wiki/Rock_Paper_Scissors_Lizard_Spock).
 
+# Database Tables diagram
+
+```mermaid
+  erDiagram
+    USER {
+        string name
+        string email
+        enum[] scopes [admin]
+    }
+    MOVE {
+        integer user_id references(USER)
+        integer play_id references(PLAY)
+    }
+    PLAY {
+        integer lobby_id references(LOBBY)
+    }
+    LOBBY {
+        string slug
+    }
+    USER ||--o{ MOVE : places
+    PLAY ||--o{ MOVE : perform
+    LOBBY ||--o{ PLAY : contains
+```
+
 # Run locally and experiment
 
 To start your Phoenix server:

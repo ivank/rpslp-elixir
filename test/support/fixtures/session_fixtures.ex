@@ -47,18 +47,4 @@ defmodule Game.SessionFixtures do
 
     move
   end
-
-  @doc """
-  Generate a move.
-  """
-  def move_fixture(attrs \\ %{}) do
-    {:ok, move} =
-      attrs
-      |> Enum.into(%{
-        figure: :rock
-      })
-      |> Game.Session.create_move()
-
-    move
-  end
 end

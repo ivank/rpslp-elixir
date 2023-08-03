@@ -222,4 +222,56 @@ defmodule Game.SessionTest do
       assert %Ecto.Changeset{} = Session.change_move(move)
     end
   end
+
+  describe "plays" do
+    alias Game.Session.Play
+
+    import Game.SessionFixtures
+
+    @invalid_attrs %{}
+
+    test "list_plays/0 returns all plays" do
+      play = play_fixture()
+      assert Session.list_plays() == [play]
+    end
+
+    test "get_play!/1 returns the play with given id" do
+      play = play_fixture()
+      assert Session.get_play!(play.id) == play
+    end
+
+    test "create_play/1 with valid data creates a play" do
+      valid_attrs = %{}
+
+      assert {:ok, %Play{} = play} = Session.create_play(valid_attrs)
+    end
+
+    test "create_play/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Session.create_play(@invalid_attrs)
+    end
+
+    test "update_play/2 with valid data updates the play" do
+      play = play_fixture()
+      update_attrs = %{}
+
+      assert {:ok, %Play{} = play} = Session.update_play(play, update_attrs)
+    end
+
+    test "update_play/2 with invalid data returns error changeset" do
+      play = play_fixture()
+      assert {:error, %Ecto.Changeset{}} = Session.update_play(play, @invalid_attrs)
+      assert play == Session.get_play!(play.id)
+    end
+
+    test "delete_play/1 deletes the play" do
+      play = play_fixture()
+      assert {:ok, %Play{}} = Session.delete_play(play)
+      assert_raise Ecto.NoResultsError, fn -> Session.get_play!(play.id) end
+    end
+
+    test "change_play/1 returns a play changeset" do
+      play = play_fixture()
+      assert %Ecto.Changeset{} = Session.change_play(play)
+    end
+  end
 end
