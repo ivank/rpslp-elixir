@@ -8,29 +8,29 @@ RPSLS(Rock Paper Scissors Lizard Spock) is an extension to the original game of 
 
 ```mermaid
 erDiagram
-    USER {
+    users {
         integer id PK
         string name
         string email
         enum[] scopes "admin"
     }
-    MOVE {
+    moves {
         integer id PK
         integer user_id FK
         integer play_id FK
         enum[] feature "rock,paper,scissors,lizard,spock"
     }
-    PLAY {
+    plays {
         integer id PK
         integer lobby_id FK
     }
-    LOBBY {
+    lobbies {
         integer id PK
         string slug
     }
-    USER ||--o{ MOVE : places
-    PLAY ||--o{ MOVE : perform
-    LOBBY ||--o{ PLAY : contains
+    users ||--o{ moves : place
+    plays ||--o{ moves : perform
+    lobbies ||--o{ plays : contain
 ```
 
 # Run locally and experiment
