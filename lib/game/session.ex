@@ -293,4 +293,20 @@ defmodule Game.Session do
   def change_move(%Move{} = move, attrs \\ %{}) do
     Move.changeset(move, attrs)
   end
+
+  def get_full_lobby!(slug) do
+    Repo.one!(
+      from lobby in Lobby,
+        where: lobby.slug == ^slug,
+        preload: [
+          plays:
+            ^from(play in Play,
+              order_by: [desc: play.inserted_at],
+              preload: [
+                moves: ^from(move in Move, order_by: [desc: move.inserted_at], preload: [:user])
+              ]
+            )
+        ]
+    )
+  end
 end

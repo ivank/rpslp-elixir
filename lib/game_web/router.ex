@@ -19,6 +19,8 @@ defmodule GameWeb.Router do
 
     get "/", PageController, :home
 
+    live "/session/:slug", SessionLive.Lobby, :lobby
+
     live "/lobbies", LobbyLive.Index, :index
     live "/lobbies/new", LobbyLive.Index, :new
     live "/lobbies/:id/edit", LobbyLive.Index, :edit

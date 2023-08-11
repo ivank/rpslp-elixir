@@ -4,7 +4,7 @@ defmodule Game.Profile.User do
 
   schema "users" do
     field :email, :string
-    field :scopes, {:array, Ecto.Enum}, values: [:rock, :paper, :scissors, :lizard, :spock]
+    field :scopes, {:array, Ecto.Enum}, values: [:admin]
     field :username, :string
 
     has_many :moves, Game.Session.Move
